@@ -6,37 +6,37 @@
       <div class="card animate-slide-in-left">
         <div class="text-5xl mb-4 text-center animate-pulse-slow">🔄</div>
         <h3 class="subtitle text-xl mb-4">Intégration et Déploiement Continus</h3>
-        <p class="text-content">
-          L'intégration continue fusionne régulièrement le code, tandis que 
-          le déploiement continue automatise le déploiement des applications.
-        </p>
+        <app-expandable-text 
+          [text]="'L\'intégration continue fusionne régulièrement le code, tandis que le déploiement continue automatise le déploiement des applications.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right">
         <div class="text-5xl mb-4 text-center animate-pulse-slow">🤖</div>
         <h3 class="subtitle text-xl mb-4">Automatisation DevOps</h3>
-        <p class="text-content">
-          L'automatisation couvre les tests, la configuration et la surveillance 
-          pour garantir des processus efficaces et fiables.
-        </p>
+        <app-expandable-text 
+          [text]="'L\'automatisation couvre les tests, la configuration et la surveillance pour garantir des processus efficaces et fiables.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-left">
         <div class="text-5xl mb-4 text-center animate-pulse-slow">🤝</div>
         <h3 class="subtitle text-xl mb-4">Collaboration Interfonctionnelle</h3>
-        <p class="text-content">
-          La collaboration entre développeurs, testeurs et administrateurs 
-          systèmes est essentielle pour le succès de DevOps.
-        </p>
+        <app-expandable-text 
+          [text]="'La collaboration entre développeurs, testeurs et administrateurs systèmes est essentielle pour le succès de DevOps.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right">
         <div class="text-5xl mb-4 text-center animate-pulse-slow">🛠️</div>
         <h3 class="subtitle text-xl mb-4">Culture et Outillage</h3>
-        <p class="text-content">
-          La culture DevOps et l'utilisation d'outils comme Jenkins, Docker 
-          et Kubernetes améliorent la performance des livraisons.
-        </p>
+        <app-expandable-text 
+          [text]="'La culture DevOps et l\'utilisation d\'outils comme Jenkins, Docker et Kubernetes améliorent la performance des livraisons.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
     </div>
     

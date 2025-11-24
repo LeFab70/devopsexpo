@@ -1,0 +1,14 @@
+.active {
+  @apply bg-gradient-to-r from-blue-500/30 to-cyan-500/30 text-cyan-400 border border-cyan-400/50;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+  }
+}
+

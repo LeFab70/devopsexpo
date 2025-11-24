@@ -6,37 +6,37 @@
       <div class="card animate-slide-in-left bg-gradient-to-br from-red-500/20 to-orange-500/20 border-red-400/50">
         <div class="text-5xl mb-4 text-center animate-pulse-slow">💰</div>
         <h3 class="subtitle text-xl mb-4 text-red-300">Complexité et Coût Initial</h3>
-        <p class="text-content">
-          La mise en œuvre de DevOps peut être complexe et coûteuse, impliquant 
-          des outils spécialisés et une formation approfondie.
-        </p>
+        <app-expandable-text 
+          [text]="'La mise en œuvre de DevOps peut être complexe et coûteuse, impliquant des outils spécialisés et une formation approfondie.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right bg-gradient-to-br from-red-500/20 to-orange-500/20 border-red-400/50">
         <div class="text-5xl mb-4 text-center animate-pulse-slow">🔄</div>
         <h3 class="subtitle text-xl mb-4 text-red-300">Transformation Culturelle</h3>
-        <p class="text-content">
-          DevOps nécessite un changement culturel majeur, souvent confronté à 
-          des résistances internes dans les organisations.
-        </p>
+        <app-expandable-text 
+          [text]="'DevOps nécessite un changement culturel majeur, souvent confronté à des résistances internes dans les organisations.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-left bg-gradient-to-br from-red-500/20 to-orange-500/20 border-red-400/50">
         <div class="text-5xl mb-4 text-center animate-pulse-slow">⚠️</div>
         <h3 class="subtitle text-xl mb-4 text-red-300">Risques liés à l'Automatisation</h3>
-        <p class="text-content">
-          Une automatisation mal configurée peut introduire des risques et des 
-          vulnérabilités dans les processus DevOps.
-        </p>
+        <app-expandable-text 
+          [text]="'Une automatisation mal configurée peut introduire des risques et des vulnérabilités dans les processus DevOps.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right bg-gradient-to-br from-red-500/20 to-orange-500/20 border-red-400/50">
         <div class="text-5xl mb-4 text-center animate-pulse-slow">🎓</div>
         <h3 class="subtitle text-xl mb-4 text-red-300">Dépendance aux Compétences</h3>
-        <p class="text-content">
-          La dépendance à des outils et compétences spécifiques peut être un 
-          obstacle pour les petites organisations.
-        </p>
+        <app-expandable-text 
+          [text]="'La dépendance à des outils et compétences spécifiques peut être un obstacle pour les petites organisations.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
     </div>
     

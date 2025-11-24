@@ -6,37 +6,37 @@
       <div class="card animate-slide-in-left hover:scale-105 transition-transform">
         <div class="text-5xl mb-4 text-center">💻</div>
         <h3 class="subtitle text-xl mb-4">Développeurs</h3>
-        <p class="text-content">
-          Les développeurs écrivent et maintiennent le code essentiel aux 
-          applications et services dans le pipeline DevOps.
-        </p>
+        <app-expandable-text 
+          [text]="'Les développeurs écrivent et maintiennent le code essentiel aux applications et services dans le pipeline DevOps.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right hover:scale-105 transition-transform">
         <div class="text-5xl mb-4 text-center">⚙️</div>
         <h3 class="subtitle text-xl mb-4">Ingénieurs DevOps</h3>
-        <p class="text-content">
-          Les ingénieurs DevOps automatisent les processus et intègrent les 
-          outils pour accélérer le cycle de développement.
-        </p>
+        <app-expandable-text 
+          [text]="'Les ingénieurs DevOps automatisent les processus et intègrent les outils pour accélérer le cycle de développement.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-left hover:scale-105 transition-transform">
         <div class="text-5xl mb-4 text-center">✅</div>
         <h3 class="subtitle text-xl mb-4">Responsables QA</h3>
-        <p class="text-content">
-          Les responsables QA garantissent la qualité grâce à des tests 
-          automatisés rigoureux et continus.
-        </p>
+        <app-expandable-text 
+          [text]="'Les responsables QA garantissent la qualité grâce à des tests automatisés rigoureux et continus.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right hover:scale-105 transition-transform">
         <div class="text-5xl mb-4 text-center">🖥️</div>
         <h3 class="subtitle text-xl mb-4">Administrateurs Systèmes</h3>
-        <p class="text-content">
-          Les administrateurs systèmes gèrent l'infrastructure, la sécurité 
-          et la stabilité des environnements de production.
-        </p>
+        <app-expandable-text 
+          [text]="'Les administrateurs systèmes gèrent l\'infrastructure, la sécurité et la stabilité des environnements de production.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
     </div>
     

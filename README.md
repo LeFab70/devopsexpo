@@ -72,4 +72,4 @@ src/
 
 ## 📝 Notes
 
-Cette application a été créée à partir du contenu d'une présentation PowerPoint sur DevOps. Toutes les sections reflètent fidèlement le contenu original.
+

@@ -6,37 +6,37 @@
       <div class="card animate-slide-in-left">
         <div class="text-5xl mb-4 text-center">🔄</div>
         <h3 class="subtitle text-xl mb-4">Phases du Cycle DevOps</h3>
-        <p class="text-content">
-          Le cycle DevOps comprend planification, développement, intégration, 
-          déploiement, exploitation et surveillance des systèmes.
-        </p>
+        <app-expandable-text 
+          [text]="'Le cycle DevOps comprend planification, développement, intégration, déploiement, exploitation et surveillance des systèmes.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right">
         <div class="text-5xl mb-4 text-center">📋</div>
         <h3 class="subtitle text-xl mb-4">Planification et Développement</h3>
-        <p class="text-content">
-          La planification définit les objectifs, tandis que le développement 
-          crée et valide le code source.
-        </p>
+        <app-expandable-text 
+          [text]="'La planification définit les objectifs, tandis que le développement crée et valide le code source.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-left">
         <div class="text-5xl mb-4 text-center">🚀</div>
         <h3 class="subtitle text-xl mb-4">Intégration et Déploiement Continus</h3>
-        <p class="text-content">
-          L'intégration continue teste et fusionne le code, le déploiement 
-          automatisé livre rapidement en production.
-        </p>
+        <app-expandable-text 
+          [text]="'L\'intégration continue teste et fusionne le code, le déploiement automatisé livre rapidement en production.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right">
         <div class="text-5xl mb-4 text-center">📊</div>
         <h3 class="subtitle text-xl mb-4">Exploitation et Surveillance</h3>
-        <p class="text-content">
-          L'exploitation assure la stabilité et la performance, la surveillance 
-          collecte des données pour améliorer le système.
-        </p>
+        <app-expandable-text 
+          [text]="'L\'exploitation assure la stabilité et la performance, la surveillance collecte des données pour améliorer le système.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
     </div>
     

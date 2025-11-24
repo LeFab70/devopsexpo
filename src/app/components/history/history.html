@@ -6,37 +6,37 @@
       <div class="card animate-slide-in-left">
         <div class="text-5xl mb-4 text-center">📜</div>
         <h3 class="subtitle text-xl mb-4">Origines de DevOps</h3>
-        <p class="text-content">
-          DevOps est né au début des années 2000 pour résoudre les limites 
-          des méthodes traditionnelles de développement et d'exploitation.
-        </p>
+        <app-expandable-text 
+          [text]="'DevOps est né au début des années 2000 pour résoudre les limites des méthodes traditionnelles de développement et d\'exploitation.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right">
         <div class="text-5xl mb-4 text-center">🎯</div>
         <h3 class="subtitle text-xl mb-4">Principes Fondamentaux</h3>
-        <p class="text-content">
-          DevOps encourage la collaboration, l'automatisation, l'intégration 
-          continue et la livraison continue pour améliorer les livraisons.
-        </p>
+        <app-expandable-text 
+          [text]="'DevOps encourage la collaboration, l\'automatisation, l\'intégration continue et la livraison continue pour améliorer les livraisons.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-left">
         <div class="text-5xl mb-4 text-center">🌐</div>
         <h3 class="subtitle text-xl mb-4">Culture DevOps</h3>
-        <p class="text-content">
-          La culture DevOps repose sur la communication ouverte et la 
-          responsabilité partagée entre équipes de développement et opérations.
-        </p>
+        <app-expandable-text 
+          [text]="'La culture DevOps repose sur la communication ouverte et la responsabilité partagée entre équipes de développement et opérations.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
       
       <div class="card animate-slide-in-right">
         <div class="text-5xl mb-4 text-center">🏢</div>
         <h3 class="subtitle text-xl mb-4">Impact Organisationnel</h3>
-        <p class="text-content">
-          DevOps transforme la façon dont les organisations conçoivent, 
-          déploient et maintiennent leurs systèmes informatiques.
-        </p>
+        <app-expandable-text 
+          [text]="'DevOps transforme la façon dont les organisations conçoivent, déploient et maintiennent leurs systèmes informatiques.'"
+          [collapsed]="textsCollapsed()">
+        </app-expandable-text>
       </div>
     </div>
     

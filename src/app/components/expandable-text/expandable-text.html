@@ -1,0 +1,22 @@
+<div class="expandable-text">
+  @if (!collapsed || isExpanded()) {
+    <p class="text-content animate-fade-in">
+      {{ text }}
+    </p>
+  }
+  <button 
+    (click)="toggle()" 
+    class="mt-2 text-cyan-400 hover:text-cyan-300 font-semibold text-sm transition-colors flex items-center gap-1 hover:scale-105">
+    @if (isExpanded()) {
+      <span>Masquer le texte</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+      </svg>
+    } @else {
+      <span>Lire plus</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    }
+  </button>
+</div>
