@@ -1,0 +1,33 @@
+@if (isVisible()) {
+  <div 
+    class="modal-backdrop fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    [class.modal-open]="isAnimating()"
+    [class.modal-closing]="!isAnimating() && isVisible()"
+    (click)="onBackdropClick($event)">
+    <div 
+      class="modal-content bg-slate-900 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-cyan-400/30"
+      [class.modal-content-open]="isAnimating()"
+      [class.modal-content-closing]="!isAnimating() && isVisible()">
+      <div class="flex justify-between items-start mb-6">
+        <div class="flex items-center gap-4">
+          @if (icon) {
+            <div class="text-5xl animate-bounce-slow">{{ icon }}</div>
+          }
+          <h2 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            {{ title }}
+          </h2>
+        </div>
+        <button 
+          (click)="close()"
+          class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="text-content text-lg leading-relaxed">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+}

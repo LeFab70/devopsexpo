@@ -3,7 +3,9 @@
     <h1 class="title text-center mb-12 animate-slide-up">BREF HISTORIQUE ET DESCRIPTION</h1>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="card animate-slide-in-left">
+      <div 
+        class="card animate-slide-in-left cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/50"
+        (click)="openModal('Origines de DevOps', '📜', 'DevOps est né au début des années 2000 pour résoudre les limites des méthodes traditionnelles de développement et d\'exploitation. Cette approche a émergé de la nécessité de réduire les frictions entre les équipes de développement et d\'opérations.')">
         <div class="text-5xl mb-4 text-center">📜</div>
         <h3 class="subtitle text-xl mb-4">Origines de DevOps</h3>
         <app-expandable-text 
@@ -12,7 +14,9 @@
         </app-expandable-text>
       </div>
       
-      <div class="card animate-slide-in-right">
+      <div 
+        class="card animate-slide-in-right cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/50"
+        (click)="openModal('Principes Fondamentaux', '🎯', 'DevOps encourage la collaboration, l\'automatisation, l\'intégration continue et la livraison continue pour améliorer les livraisons. Ces principes visent à créer un flux de travail plus efficace et réactif.')">
         <div class="text-5xl mb-4 text-center">🎯</div>
         <h3 class="subtitle text-xl mb-4">Principes Fondamentaux</h3>
         <app-expandable-text 
@@ -21,7 +25,9 @@
         </app-expandable-text>
       </div>
       
-      <div class="card animate-slide-in-left">
+      <div 
+        class="card animate-slide-in-left cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/50"
+        (click)="openModal('Culture DevOps', '🌐', 'La culture DevOps repose sur la communication ouverte et la responsabilité partagée entre équipes de développement et opérations. Elle favorise la transparence et la confiance mutuelle.')">
         <div class="text-5xl mb-4 text-center">🌐</div>
         <h3 class="subtitle text-xl mb-4">Culture DevOps</h3>
         <app-expandable-text 
@@ -30,7 +36,9 @@
         </app-expandable-text>
       </div>
       
-      <div class="card animate-slide-in-right">
+      <div 
+        class="card animate-slide-in-right cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/50"
+        (click)="openModal('Impact Organisationnel', '🏢', 'DevOps transforme la façon dont les organisations conçoivent, déploient et maintiennent leurs systèmes informatiques. Cette transformation impacte positivement la productivité et l\'innovation.')">
         <div class="text-5xl mb-4 text-center">🏢</div>
         <h3 class="subtitle text-xl mb-4">Impact Organisationnel</h3>
         <app-expandable-text 
@@ -39,6 +47,14 @@
         </app-expandable-text>
       </div>
     </div>
+    
+    <app-modal
+      [isOpen]="modalOpen"
+      [title]="modalTitle"
+      [icon]="modalIcon"
+      [content]="modalContent"
+      (closeModal)="closeModal()">
+    </app-modal>
     
     <div class="mt-8 flex gap-4 justify-center">
       <a routerLink="/methodology" class="inline-block px-8 py-3 bg-gray-600 rounded-lg text-white font-semibold hover:scale-105 transition-transform">

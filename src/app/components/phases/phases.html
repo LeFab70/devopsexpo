@@ -3,7 +3,9 @@
     <h1 class="title text-center mb-12 animate-slide-up">PHASES ET ACTIVITÉS</h1>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-      <div class="card animate-slide-in-left">
+      <div 
+        class="card animate-slide-in-left cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/50"
+        (click)="openModal('Phases du Cycle DevOps', '🔄', 'Le cycle DevOps comprend planification, développement, intégration, déploiement, exploitation et surveillance des systèmes. Chaque phase est interconnectée pour créer un flux de travail continu et efficace.')">
         <div class="text-5xl mb-4 text-center">🔄</div>
         <h3 class="subtitle text-xl mb-4">Phases du Cycle DevOps</h3>
         <app-expandable-text 
@@ -12,7 +14,9 @@
         </app-expandable-text>
       </div>
       
-      <div class="card animate-slide-in-right">
+      <div 
+        class="card animate-slide-in-right cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/50"
+        (click)="openModal('Planification et Développement', '📋', 'La planification définit les objectifs, tandis que le développement crée et valide le code source. Cette phase établit les bases pour un déploiement réussi.')">
         <div class="text-5xl mb-4 text-center">📋</div>
         <h3 class="subtitle text-xl mb-4">Planification et Développement</h3>
         <app-expandable-text 
@@ -21,7 +25,9 @@
         </app-expandable-text>
       </div>
       
-      <div class="card animate-slide-in-left">
+      <div 
+        class="card animate-slide-in-left cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/50"
+        (click)="openModal('Intégration et Déploiement Continus', '🚀', 'L\'intégration continue teste et fusionne le code, le déploiement automatisé livre rapidement en production. Cette approche réduit les risques et accélère la livraison.')">
         <div class="text-5xl mb-4 text-center">🚀</div>
         <h3 class="subtitle text-xl mb-4">Intégration et Déploiement Continus</h3>
         <app-expandable-text 
@@ -30,7 +36,9 @@
         </app-expandable-text>
       </div>
       
-      <div class="card animate-slide-in-right">
+      <div 
+        class="card animate-slide-in-right cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/50"
+        (click)="openModal('Exploitation et Surveillance', '📊', 'L\'exploitation assure la stabilité et la performance, la surveillance collecte des données pour améliorer le système. Cette phase garantit la continuité et l\'optimisation des services.')">
         <div class="text-5xl mb-4 text-center">📊</div>
         <h3 class="subtitle text-xl mb-4">Exploitation et Surveillance</h3>
         <app-expandable-text 
@@ -39,6 +47,14 @@
         </app-expandable-text>
       </div>
     </div>
+    
+    <app-modal
+      [isOpen]="modalOpen"
+      [title]="modalTitle"
+      [icon]="modalIcon"
+      [content]="modalContent"
+      (closeModal)="closeModal()">
+    </app-modal>
     
     <div class="card bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-2 border-cyan-400/50">
       <div class="flex items-center justify-center gap-4 flex-wrap">
