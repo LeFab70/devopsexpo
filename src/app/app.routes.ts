@@ -1,0 +1,35 @@
+import { Routes } from '@angular/router';
+import { Home } from './components/home/home';
+import { Introduction } from './components/introduction/introduction';
+import { Team } from './components/team/team';
+import { Plan } from './components/plan/plan';
+import { Methodology } from './components/methodology/methodology';
+import { History } from './components/history/history';
+import { Characteristics } from './components/characteristics/characteristics';
+import { Phases } from './components/phases/phases';
+import { Roles } from './components/roles/roles';
+import { Advantages } from './components/advantages/advantages';
+import { Disadvantages } from './components/disadvantages/disadvantages';
+import { Netflix } from './components/netflix/netflix';
+import { MethodsCanada } from './components/methods-canada/methods-canada';
+import { Learned } from './components/learned/learned';
+import { Conclusion } from './components/conclusion/conclusion';
+
+export const routes: Routes = [
+  { path: '', component: Home },
+  { path: 'introduction', component: Introduction },
+  { path: 'team', component: Team },
+  { path: 'plan', component: Plan },
+  { path: 'methodology', component: Methodology },
+  { path: 'history', component: History },
+  { path: 'characteristics', component: Characteristics },
+  { path: 'phases', component: Phases },
+  { path: 'roles', component: Roles },
+  { path: 'advantages', component: Advantages },
+  { path: 'disadvantages', component: Disadvantages },
+  { path: 'netflix', component: Netflix },
+  { path: 'methods-canada', component: MethodsCanada },
+  { path: 'learned', component: Learned },
+  { path: 'conclusion', component: Conclusion },
+  { path: '**', redirectTo: '' }
+];

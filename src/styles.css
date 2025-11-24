@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply min-h-screen flex items-center justify-center px-4 py-20;
+  }
+  
+  .card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20;
+  }
+  
+  .title {
+    @apply text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+  
+  .subtitle {
+    @apply text-2xl md:text-3xl font-semibold mb-6 text-cyan-300;
+  }
+  
+  .text-content {
+    @apply text-lg md:text-xl leading-relaxed text-gray-200;
+  }
+}
