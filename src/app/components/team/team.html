@@ -3,33 +3,30 @@
     <h1 class="title text-center mb-12 animate-slide-up">PRÉSENTATION DE L'ÉQUIPE</h1>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-      <div class="card animate-slide-in-left hover:scale-110 transition-all duration-300 hover:shadow-cyan-500/50 group">
-        <div class="text-6xl mb-4 text-center group-hover:animate-bounce">👨‍💻</div>
-        <h3 class="subtitle text-xl mb-2 text-center">Fabrice</h3>
-        <p class="text-content text-sm text-center">Membre de l'équipe</p>
-        <div class="mt-4 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-      </div>
-      
-      <div class="card animate-slide-up hover:scale-110 transition-all duration-300 hover:shadow-cyan-500/50 group" style="animation-delay: 0.1s">
-        <div class="text-6xl mb-4 text-center group-hover:animate-bounce">👨‍💼</div>
-        <h3 class="subtitle text-xl mb-2 text-center">Aubie</h3>
-        <p class="text-content text-sm text-center">Membre de l'équipe</p>
-        <div class="mt-4 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-      </div>
-      
-      <div class="card animate-slide-up hover:scale-110 transition-all duration-300 hover:shadow-cyan-500/50 group" style="animation-delay: 0.2s">
-        <div class="text-6xl mb-4 text-center group-hover:animate-bounce">👩‍💻</div>
-        <h3 class="subtitle text-xl mb-2 text-center">Grace</h3>
-        <p class="text-content text-sm text-center">Membre de l'équipe</p>
-        <div class="mt-4 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-      </div>
-      
-      <div class="card animate-slide-in-right hover:scale-110 transition-all duration-300 hover:shadow-cyan-500/50 group" style="animation-delay: 0.3s">
-        <div class="text-6xl mb-4 text-center group-hover:animate-bounce">👨‍🔧</div>
-        <h3 class="subtitle text-xl mb-2 text-center">Perez</h3>
-        <p class="text-content text-sm text-center">Membre de l'équipe</p>
-        <div class="mt-4 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-      </div>
+      @for (member of members; track member.initial; let i = $index) {
+        <div class="flip-card-container" 
+             [style.animation-delay]="(i * 0.1) + 's'"
+             (click)="toggleCard(i)">
+          <div class="flip-card" [class.flipped]="isFlipped(i)">
+            <!-- Face avant (initiale) -->
+            <div class="flip-card-front">
+              <div class="card-initial">
+                <div class="initial-letter">{{ member.initial }}</div>
+                <p class="text-content text-sm mt-4 opacity-70">Cliquez pour découvrir</p>
+              </div>
+            </div>
+            <!-- Face arrière (détails) -->
+            <div class="flip-card-back">
+              <div class="card-content">
+                <div class="text-6xl mb-4 text-center">{{ member.emoji }}</div>
+                <h3 class="subtitle text-xl mb-2 text-center">{{ member.name }}</h3>
+                <p class="text-content text-sm text-center">{{ member.description }}</p>
+                <div class="mt-4 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
     </div>
     
     <div class="card bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-2 border-cyan-400/50 animate-pulse-slow">
