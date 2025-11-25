@@ -3,12 +3,6 @@
   perspective: 1000px;
   height: 200px;
   position: relative;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.rotating-card.opened {
   opacity: 1;
   transform: translateY(0);
 }
@@ -32,6 +26,7 @@
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
   border: 2px solid rgba(59, 130, 246, 0.3);
   transform: rotateY(0deg);
+  z-index: 2;
 }
 
 .rotating-card .card-back {
@@ -39,6 +34,7 @@
   border: 2px solid rgba(6, 182, 212, 0.5);
   transform: rotateY(180deg);
   padding: 1.5rem;
+  z-index: 1;
 }
 
 /* Animation de rotation quand la carte s'ouvre */

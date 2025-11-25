@@ -29,15 +29,24 @@ export class Plan implements AfterViewInit {
   openedCards: Set<number> = new Set();
 
   ngAfterViewInit(): void {
-    this.setupIntersectionObserver();
+    // Utiliser un changement détecté pour s'assurer que les ViewChildren sont disponibles
+    setTimeout(() => {
+      this.setupIntersectionObserver();
+    }, 100);
   }
 
   setupIntersectionObserver(): void {
+    if (this.planCards.length === 0) {
+      // Réessayer si les éléments ne sont pas encore disponibles
+      setTimeout(() => this.setupIntersectionObserver(), 200);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const cardIndex = Array.from(this.planCards).findIndex(
+            const cardIndex = this.planCards.toArray().findIndex(
               card => card.nativeElement === entry.target
             );
             if (cardIndex !== -1 && !this.openedCards.has(cardIndex)) {
@@ -49,17 +58,30 @@ export class Plan implements AfterViewInit {
         });
       },
       {
-        threshold: 0.3, // Déclenche quand 30% de la carte est visible
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1, // Déclenche quand 10% de la carte est visible
+        rootMargin: '50px' // Déclenche un peu avant que la carte entre dans le viewport
       }
     );
 
-    // Observer chaque carte après un court délai pour s'assurer que les éléments sont rendus
-    setTimeout(() => {
-      this.planCards.forEach((card) => {
+    // Observer chaque carte
+    this.planCards.forEach((card) => {
+      if (card.nativeElement) {
         observer.observe(card.nativeElement);
-      });
-    }, 100);
+        // Vérifier si la carte est déjà visible au chargement
+        const rect = card.nativeElement.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        if (isVisible) {
+          const cardIndex = this.planCards.toArray().findIndex(
+            c => c.nativeElement === card.nativeElement
+          );
+          if (cardIndex !== -1) {
+            setTimeout(() => {
+              this.openedCards.add(cardIndex);
+            }, cardIndex * 150);
+          }
+        }
+      }
+    });
   }
 
   isCardOpened(index: number): boolean {
