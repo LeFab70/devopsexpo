@@ -1,0 +1,109 @@
+/* Container pour la carte rotative */
+.rotating-card {
+  perspective: 1000px;
+  height: 200px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.rotating-card.opened {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rotating-card .card-front,
+.rotating-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rotating-card .card-front {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  transform: rotateY(0deg);
+}
+
+.rotating-card .card-back {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+  border: 2px solid rgba(6, 182, 212, 0.5);
+  transform: rotateY(180deg);
+  padding: 1.5rem;
+}
+
+/* Animation de rotation quand la carte s'ouvre */
+.rotating-card.opened .card-front {
+  transform: rotateY(-180deg);
+}
+
+.rotating-card.opened .card-back {
+  transform: rotateY(0deg);
+}
+
+/* Style du recto (face avant) */
+.card-number {
+  font-size: 4rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.card-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.card-front .subtitle {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Style du verso (face arrière) */
+.card-content-inner {
+  text-align: center;
+  width: 100%;
+}
+
+.card-back .text-content {
+  margin-top: 0.5rem;
+}
+
+/* Animation d'entrée progressive */
+.rotating-card:nth-child(1) { transition-delay: 0s; }
+.rotating-card:nth-child(2) { transition-delay: 0.1s; }
+.rotating-card:nth-child(3) { transition-delay: 0.2s; }
+.rotating-card:nth-child(4) { transition-delay: 0.3s; }
+.rotating-card:nth-child(5) { transition-delay: 0.4s; }
+.rotating-card:nth-child(6) { transition-delay: 0.5s; }
+
+/* Effet hover sur les cartes ouvertes */
+.rotating-card.opened:hover .card-back {
+  box-shadow: 0 8px 16px rgba(6, 182, 212, 0.4);
+  transform: rotateY(0deg) scale(1.02);
+}
+
+/* Animation de rotation plus fluide */
+@keyframes cardRotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+

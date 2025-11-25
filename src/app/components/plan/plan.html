@@ -3,41 +3,25 @@
     <h1 class="title text-center mb-12 animate-slide-up">PLAN DE LA PRÉSENTATION</h1>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="card animate-slide-in-left" style="animation-delay: 0.1s">
-        <div class="text-4xl mb-4">1️⃣</div>
-        <h3 class="subtitle text-xl mb-3">Méthodologie DevOps</h3>
-        <p class="text-content">Introduction et concepts de base</p>
-      </div>
-      
-      <div class="card animate-slide-in-right" style="animation-delay: 0.2s">
-        <div class="text-4xl mb-4">2️⃣</div>
-        <h3 class="subtitle text-xl mb-3">Historique et Description</h3>
-        <p class="text-content">Origines et principes fondamentaux</p>
-      </div>
-      
-      <div class="card animate-slide-in-left" style="animation-delay: 0.3s">
-        <div class="text-4xl mb-4">3️⃣</div>
-        <h3 class="subtitle text-xl mb-3">Caractéristiques Clés</h3>
-        <p class="text-content">Intégration continue, automatisation</p>
-      </div>
-      
-      <div class="card animate-slide-in-right" style="animation-delay: 0.4s">
-        <div class="text-4xl mb-4">4️⃣</div>
-        <h3 class="subtitle text-xl mb-3">Phases et Rôles</h3>
-        <p class="text-content">Cycle DevOps et acteurs</p>
-      </div>
-      
-      <div class="card animate-slide-in-left" style="animation-delay: 0.5s">
-        <div class="text-4xl mb-4">5️⃣</div>
-        <h3 class="subtitle text-xl mb-3">Avantages & Désavantages</h3>
-        <p class="text-content">Analyse complète</p>
-      </div>
-      
-      <div class="card animate-slide-in-right" style="animation-delay: 0.6s">
-        <div class="text-4xl mb-4">6️⃣</div>
-        <h3 class="subtitle text-xl mb-3">Exemple & Conclusion</h3>
-        <p class="text-content">Netflix et synthèse</p>
-      </div>
+      @for (item of planItems; track item.number; let i = $index) {
+        <div 
+          #planCard
+          class="rotating-card"
+          [class.opened]="isCardOpened(i)">
+          <div class="card-front">
+            <div class="card-number">{{ item.number }}</div>
+            <div class="card-emoji">{{ item.emoji }}</div>
+            <h3 class="subtitle text-xl">{{ item.title }}</h3>
+          </div>
+          <div class="card-back">
+            <div class="card-content-inner">
+              <div class="text-4xl mb-4">{{ item.emoji }}</div>
+              <h3 class="subtitle text-xl mb-3">{{ item.title }}</h3>
+              <p class="text-content">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      }
     </div>
     
     <div class="mt-8 text-center">
